@@ -1,0 +1,917 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --azul-principal: #1e90ff;
+    --azul-claro: #50a4e0;
+    --cinza-claro: #f4f4f4;
+    --destaque: #ffcc00;
+}
+
+/* Cabeçalho */
+header {
+    position: fixed;
+    /* fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    /* fica acima de todos os elementos */
+    background: linear-gradient(270deg, #1e90ff, #63b3ed, #1e90ff);
+    /* mantém o gradiente */
+    padding: 10px 20px;
+    /* ajuste conforme necessário */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* opcional: sombra para destaque */
+}
+
+/* Adiciona espaçamento no topo do conteúdo para não ficar atrás do cabeçalho */
+main {
+    padding-top: 120px;
+    /* ajuste de acordo com a altura total do header */
+}
+
+header .logo {
+    max-width: 90px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-left: -20px;
+    /* move o logo para a esquerda sem afetar o texto */
+}
+
+/* Container geral do header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo + Texto */
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: -20px;
+    /* move o logo mais para a esquerda */
+}
+
+header .logo {
+    max-width: 90px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+header .header-text h1,
+header .header-text h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0;
+}
+
+header .header-text h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    /* branco puro */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    /* sombra leve para destacar */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+    /* destaque ao passar o mouse */
+}
+
+/* Dropdown */
+/* Dropdown menu filiais */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.nav-links .dropdown-menu li {
+    width: 100%;
+}
+
+.nav-links .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links .dropdown-menu li a:hover {
+    background: #f0f8ff;
+}
+
+/* Mostrar menu ao passar o mouse */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Redes Sociais */
+.social-icons {
+    display: flex;
+    gap: 25px;
+    /* maior espaço entre Instagram e Facebook */
+    margin-left: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Menu toggle mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background: var(--azul-principal);
+        width: 100%;
+        left: -100%;
+        transition: left 0.3s;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+
+    .social-icons {
+        margin-left: 0;
+        gap: 15px;
+        padding: 10px 0;
+    }
+}
+
+
+/* Navbar - final */
+
+
+
+/* Menu toggle mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background: rgba(30, 144, 255, 0.95);
+        width: 100%;
+        left: -100%;
+        transition: left 0.3s;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+}
+
+/* Sections */
+
+/* Sobre nós inicio*/
+
+.sobre-nos {
+    background: #f4f4f4;
+    padding: 60px 20px;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre-text {
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.sobre-text h2 {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+.sobre-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.sobre-imagem {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .sobre-text {
+        text-align: center;
+    }
+}
+
+/* Sobre nós final*/
+
+
+
+/* Unidades/ Filiais - inicio*/
+
+.unidades-section {
+    background: #f0f8ff;
+    /* fundo suave para destacar */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.unidades-section h2 {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 40px;
+}
+
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s, box-shadow 0.5s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-icon {
+    font-size: 50px;
+    color: #1e90ff;
+    margin-bottom: 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.2);
+    color: #ffcc00;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
+
+/* Unidades/ Filiais - Final*/
+
+
+
+#filiais-site {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#iframeFilial {
+    max-width: 1200px;
+    width: 100%;
+    height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown menu moderno já existente */
+.nav-links li.dropdown {
+    position: relative;
+}
+
+.nav-links li.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e90ff;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    min-width: 180px;
+    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-links li.dropdown .dropdown-menu li a {
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.nav-links li.dropdown .dropdown-menu li a:hover {
+    background: #0066cc;
+    border-radius: 5px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-links li.dropdown .dropdown-menu {
+        position: static;
+        display: none;
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(30, 144, 255, 0.95);
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .nav-links li.dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+/* sessao cultos inicio*/
+
+
+.cultos-section {
+    background: #f4f9ff;
+    /* leve azul para destacar */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cultos-section h2 {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 40px;
+}
+
+.cultos-section .cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cultos-section .card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s, box-shadow 0.5s, background 0.3s;
+    cursor: pointer;
+}
+
+.cultos-section .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    background: #e6f0ff;
+}
+
+.cultos-section .card-icon {
+    font-size: 50px;
+    color: #1e90ff;
+    margin-bottom: 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.cultos-section .card:hover .card-icon {
+    transform: scale(1.2);
+    color: #ffcc00;
+}
+
+.cultos-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cultos-section p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cultos-section .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cultos-section .card {
+        width: 80%;
+    }
+}
+
+/* sessao cultos final*/
+
+
+/* contatos inicio*/
+
+.contato-section {
+    background: linear-gradient(135deg, #e6f0ff, #f0f8ff);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contato-section h2 {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 40px;
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s, box-shadow 0.5s, background 0.3s;
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    background: #f0f8ff;
+}
+
+.contact-icon {
+    font-size: 50px;
+    color: #1e90ff;
+    margin-bottom: 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.2);
+    color: #ffcc00;
+}
+
+.contact-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 80%;
+    }
+}
+
+/* contatos final*/
+
+/* Formulário inicio */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form input,
+.form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 8px var(--azul-claro);
+}
+
+.form button {
+    background: var(--destaque);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.form button:hover {
+    background: #ffdd33;
+}
+
+.form-message {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Formulário final */
+
+
+
+/* WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 28px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+    /* Animação pulse */
+    animation: pulse 2s infinite;
+}
+
+.whatsapp:hover {
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(135deg, #20b955, #0c6f57);
+}
+
+/* Keyframes do efeito pulsante */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* final whatsapp*/
+
+/* Botão topo */
+#topo {
+    position: fixed;
+    bottom: 40px;
+    /* distância do rodapé */
+    left: 50%;
+    /* centraliza horizontalmente */
+    transform: translateX(-50%);
+    /* ajusta para ficar exatamente no centro */
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    /* degradê azul */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    display: none;
+    /* será mostrado ao scroll */
+
+    /* animação pulse */
+    animation: pulseTop 2.2s infinite;
+}
+
+/* Hover moderno */
+#topo:hover {
+    transform: translateX(-50%) scale(1.15) rotate(-8deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(135deg, #0069d9, #004085);
+}
+
+/* Keyframes pulse */
+@keyframes pulseTop {
+    0% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.6);
+    }
+
+    70% {
+        transform: translateX(-50%) scale(1.05);
+        box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+/* Tooltip moderno azul */
+#topo[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #007bff;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#topo[data-tooltip]::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #007bff transparent;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Mostrar tooltip ao hover */
+#topo:hover::after,
+#topo:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background: var(--azul-principal);
+        width: 100%;
+        left: -100%;
+        transition: left 0.3s;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+}
+
+
+/* Tooltip base */
+.whatsapp[data-tooltip]::after,
+#topo[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%;
+    right: 50%;
+    transform: translateX(50%) translateY(10px);
+    /* começa um pouco abaixo */
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    /* animação */
+}
+
+/* Setinha do tooltip */
+.whatsapp[data-tooltip]::before,
+#topo[data-tooltip]::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    transform: translateX(50%) translateY(10px);
+    /* começa um pouco abaixo */
+    border-width: 6px;
+    border-style: solid;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* --- Tooltip WhatsApp (verde) --- */
+.whatsapp[data-tooltip]::after {
+    background: #25d366;
+}
+
+.whatsapp[data-tooltip]::before {
+    border-color: transparent transparent #25d366 transparent;
+}
+
+/* --- Tooltip Topo (azul) --- */
+#topo[data-tooltip]::after {
+    background: #007bff;
+}
+
+#topo[data-tooltip]::before {
+    border-color: transparent transparent #007bff transparent;
+}
+
+/* Mostrar ao hover com fade + slide */
+.whatsapp:hover::after,
+.whatsapp:hover::before,
+#topo:hover::after,
+#topo:hover::before {
+    opacity: 1;
+    transform: translateX(50%) translateY(0);
+    /* sobe suavemente */
+}
+
