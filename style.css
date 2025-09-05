@@ -7,9 +7,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Variáveis de cores */
 :root {
-    --azul-principal: #1e90ff;
-    --azul-claro: #50a4e0;
+    --azul-principal: #003366;
+    --azul-claro: #0059b3;
     --cinza-claro: #f4f4f4;
     --destaque: #ffcc00;
 }
@@ -17,74 +18,52 @@
 /* Cabeçalho */
 header {
     position: fixed;
-    /* fixa o cabeçalho no topo */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    /* fica acima de todos os elementos */
-    background: linear-gradient(270deg, #1e90ff, #63b3ed, #1e90ff);
-    /* mantém o gradiente */
+    background: linear-gradient(270deg, var(--azul-principal), var(--azul-principal), var(--azul-claro));
     padding: 10px 20px;
-    /* ajuste conforme necessário */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* opcional: sombra para destaque */
 }
 
-/* Adiciona espaçamento no topo do conteúdo para não ficar atrás do cabeçalho */
 main {
     padding-top: 120px;
-    /* ajuste de acordo com a altura total do header */
+    /* espaço para o header fixo */
 }
 
-header .logo {
-    max-width: 90px;
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    margin-left: -20px;
-    /* move o logo para a esquerda sem afetar o texto */
-}
-
-/* Container geral do header */
+/* Container header */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-/* Logo + Texto */
+/* Logo + texto */
 .logo-text {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: -20px;
-    /* move o logo mais para a esquerda */
 }
 
-header .logo {
+.logo-text img {
     max-width: 90px;
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
+    display: block;
 }
 
-header .header-text h1,
-header .header-text h2 {
-    font-size: 1.2rem;
+.header-text h1,
+.header-text h2 {
+    color: #fff;
     font-weight: 700;
     line-height: 1.2;
-    color: #fff;
-    margin: 0;
+    font-size: 1.2rem;
 }
 
-header .header-text h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
+.header-text h2 {
+    font-size: 1.1rem;
 }
 
 /* Navbar */
@@ -101,329 +80,23 @@ header .header-text h2 {
 }
 
 .nav-links li a {
-    color: #ffffff;
-    /* branco puro */
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.8rem;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    /* sombra leve para destacar */
     transition: color 0.3s, transform 0.3s;
 }
 
 .nav-links li a:hover {
-    color: #ffcc00;
-    /* destaque ao passar o mouse */
+    color: var(--destaque);
 }
 
-/* Dropdown */
-/* Dropdown menu filiais */
-.nav-links .dropdown {
-    position: relative;
-}
-
-.nav-links .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    list-style: none;
-    padding: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    min-width: 180px;
-    z-index: 1000;
-}
-
-.nav-links .dropdown-menu li {
-    width: 100%;
-}
-
-.nav-links .dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.nav-links .dropdown-menu li a:hover {
-    background: #f0f8ff;
-}
-
-/* Mostrar menu ao passar o mouse */
-.nav-links .dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* Redes Sociais */
-.social-icons {
-    display: flex;
-    gap: 25px;
-    /* maior espaço entre Instagram e Facebook */
-    margin-left: 15px;
-}
-
-.social-icons a {
-    color: #fff;
-    font-size: 1.2rem;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.social-icons a:hover {
-    color: #ffcc00;
-    transform: scale(1.1);
-}
-
-/* Menu toggle mobile */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        background: var(--azul-principal);
-        width: 100%;
-        left: -100%;
-        transition: left 0.3s;
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 20px;
-    }
-
-    .social-icons {
-        margin-left: 0;
-        gap: 15px;
-        padding: 10px 0;
-    }
-}
-
-
-/* Navbar - final */
-
-
-
-/* Menu toggle mobile */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        background: rgba(30, 144, 255, 0.95);
-        width: 100%;
-        left: -100%;
-        transition: left 0.3s;
-        padding: 10px 0;
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 20px;
-    }
-}
-
-/* Sections */
-
-/* Sobre nós inicio*/
-
-.sobre-nos {
-    background: #f4f4f4;
-    padding: 60px 20px;
-}
-
-.sobre-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.sobre-text {
-    flex: 1;
-    min-width: 280px;
-    text-align: left;
-}
-
-.sobre-text h2 {
-    font-size: 2rem;
-    color: #1e90ff;
-    margin-bottom: 20px;
-}
-
-.sobre-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.sobre-imagem {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-}
-
-.sobre-imagem img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .sobre-container {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .sobre-text {
-        text-align: center;
-    }
-}
-
-/* Sobre nós final*/
-
-
-
-/* Unidades/ Filiais - inicio*/
-
-.unidades-section {
-    background: #f0f8ff;
-    /* fundo suave para destacar */
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.unidades-section h2 {
-    font-size: 2rem;
-    color: #1e90ff;
-    margin-bottom: 40px;
-}
-
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: #fff;
-    padding: 30px 20px;
-    border-radius: 15px;
-    width: 250px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.5s, box-shadow 0.5s;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-10px) rotateY(5deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-}
-
-.card-icon {
-    font-size: 50px;
-    color: #1e90ff;
-    margin-bottom: 15px;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.card:hover .card-icon {
-    transform: scale(1.2);
-    color: #ffcc00;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.card p {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 80%;
-    }
-}
-
-/* Unidades/ Filiais - Final*/
-
-
-
-#filiais-site {
-    margin-top: 40px;
-    text-align: center;
-}
-
-#iframeFilial {
-    max-width: 1200px;
-    width: 100%;
-    height: 600px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Dropdown menu moderno já existente */
+/* Dropdown menu */
 .nav-links li.dropdown {
     position: relative;
+    cursor: pointer;
 }
 
 .nav-links li.dropdown .dropdown-menu {
@@ -431,7 +104,7 @@ header .header-text h2 {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #1e90ff;
+    background: var(--azul-claro);
     list-style: none;
     padding: 10px 0;
     border-radius: 8px;
@@ -462,8 +135,68 @@ header .header-text h2 {
     border-radius: 5px;
 }
 
-/* Mobile */
+/* Redes sociais */
+.social-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--destaque);
+    transform: scale(1.1);
+}
+
+/* Menu toggle mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background: var(--azul-principal);
+        width: 100%;
+        left: -100%;
+        transition: left 0.3s;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+
+    .social-icons {
+        margin-left: 0;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    /* Dropdown mobile */
     .nav-links li.dropdown .dropdown-menu {
         position: static;
         display: none;
@@ -479,102 +212,250 @@ header .header-text h2 {
     }
 }
 
-/* sessao cultos inicio*/
-
-
-.cultos-section {
-    background: #f4f9ff;
-    /* leve azul para destacar */
+/* Sections gerais */
+.section {
     padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Carrossel Criativo */
+.carrossel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.slide p {
+    font-size: 1.2rem;
+}
+
+/* Botões do carrossel */
+.carrossel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.carrossel-buttons span {
+    cursor: pointer;
+    font-size: 40px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s;
+}
+
+.carrossel-buttons span:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Sobre nós */
+.sobre-nos {
+    background: var(--cinza-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.sobre-text h2 {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+.sobre-text p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .sobre-nos {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+
+/* Seção Cultos */
+.cultos-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f4f8ff, #e6f0ff);
 }
 
 .cultos-section h2 {
-    font-size: 2rem;
-    color: #1e90ff;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #003366;
+}
+
+.cultos-desc {
+    font-size: 1.1rem;
+    color: #444;
     margin-bottom: 40px;
 }
 
-.cultos-section .cards {
+/* Grid de cultos */
+.cultos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Card de culto */
+.culto-card {
+    background: linear-gradient(135deg, #0077ff, #003366);
+    color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.culto-card i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.culto-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.culto-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Hover animado */
+.culto-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/*sessao culto*/
+
+/* Cards genéricos */
+.cards {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
 
-.cultos-section .card {
+.card {
     background: #fff;
-    padding: 30px 25px;
+    padding: 30px 20px;
     border-radius: 15px;
     width: 250px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    transition: transform 0.5s, box-shadow 0.5s, background 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s, box-shadow 0.5s;
     cursor: pointer;
 }
 
-.cultos-section .card:hover {
+.card:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    background: #e6f0ff;
 }
 
-.cultos-section .card-icon {
+.card-icon {
     font-size: 50px;
     color: #1e90ff;
     margin-bottom: 15px;
     transition: transform 0.3s, color 0.3s;
 }
 
-.cultos-section .card:hover .card-icon {
+.card:hover .card-icon {
     transform: scale(1.2);
-    color: #ffcc00;
+    color: var(--destaque);
 }
 
-.cultos-section h3 {
-    margin-bottom: 10px;
+.card h3 {
     font-size: 1.2rem;
     color: #333;
+    margin-bottom: 10px;
 }
 
-.cultos-section p {
+.card p {
     font-size: 0.95rem;
     color: #555;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
-    .cultos-section .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cultos-section .card {
+    .card {
         width: 80%;
     }
 }
 
-/* sessao cultos final*/
-
-
-/* contatos inicio*/
-
+/* Contato */
 .contato-section {
     background: linear-gradient(135deg, #e6f0ff, #f0f8ff);
-    padding: 60px 20px;
     text-align: center;
-}
-
-.contato-section h2 {
-    font-size: 2rem;
-    color: #1e90ff;
-    margin-bottom: 40px;
-}
-
-.contact-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
 }
 
 .contact-card {
@@ -602,7 +483,7 @@ header .header-text h2 {
 
 .contact-card:hover .contact-icon {
     transform: scale(1.2);
-    color: #ffcc00;
+    color: var(--destaque);
 }
 
 .contact-card h3 {
@@ -616,62 +497,6 @@ header .header-text h2 {
     color: #555;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .contact-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-card {
-        width: 80%;
-    }
-}
-
-/* contatos final*/
-
-/* Formulário inicio */
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.form input,
-.form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    transition: border 0.3s, box-shadow 0.3s;
-}
-
-.form input:focus,
-.form textarea:focus {
-    border-color: var(--azul-principal);
-    box-shadow: 0 0 8px var(--azul-claro);
-}
-
-.form button {
-    background: var(--destaque);
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s;
-}
-
-.form button:hover {
-    background: #ffdd33;
-}
-
-.form-message {
-    margin-top: 10px;
-    font-weight: 600;
-}
-
 /* Footer */
 footer {
     background: #222;
@@ -679,11 +504,6 @@ footer {
     padding: 20px;
     text-align: center;
 }
-
-
-/* Formulário final */
-
-
 
 /* WhatsApp */
 .whatsapp {
@@ -702,9 +522,6 @@ footer {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     z-index: 1000;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-
-    /* Animação pulse */
     animation: pulse 2s infinite;
 }
 
@@ -714,7 +531,6 @@ footer {
     background: linear-gradient(135deg, #20b955, #0c6f57);
 }
 
-/* Keyframes do efeito pulsante */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -732,72 +548,64 @@ footer {
     }
 }
 
-/* final whatsapp*/
 
-/* Botão topo */
-#topo {
+#topo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Botão WhatsApp Moderno Redondo */
+#whatsapp-button {
     position: fixed;
-    bottom: 40px;
-    /* distância do rodapé */
-    left: 50%;
-    /* centraliza horizontalmente */
-    transform: translateX(-50%);
-    /* ajusta para ficar exatamente no centro */
+    bottom: 20px;
+    right: 20px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    /* degradê azul */
+    background: linear-gradient(135deg, #25d366, #128c7e);
     color: #fff;
-    border: none;
-    border-radius: 50%;
+    font-size: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    z-index: 999;
-    display: none;
-    /* será mostrado ao scroll */
-
-    /* animação pulse */
-    animation: pulseTop 2.2s infinite;
+    border-radius: 50%;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: pulse 1.8s infinite;
+    text-decoration: none;
 }
 
-/* Hover moderno */
-#topo:hover {
-    transform: translateX(-50%) scale(1.15) rotate(-8deg);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-    background: linear-gradient(135deg, #0069d9, #004085);
+/* Efeito hover */
+#whatsapp-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Keyframes pulse */
-@keyframes pulseTop {
+/* Animação pulsante */
+@keyframes pulse {
     0% {
-        transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.6);
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
     }
 
     70% {
-        transform: translateX(-50%) scale(1.05);
-        box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
     }
 
     100% {
-        transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
 
-/* Tooltip moderno azul */
-#topo[data-tooltip]::after {
+/* Tooltip padrão */
+[data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
     bottom: 110%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    background: #007bff;
-    color: #fff;
     padding: 6px 10px;
     border-radius: 6px;
     font-size: 13px;
@@ -807,7 +615,7 @@ footer {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-#topo[data-tooltip]::before {
+[data-tooltip]::before {
     content: '';
     position: absolute;
     bottom: 100%;
@@ -815,103 +623,41 @@ footer {
     transform: translateX(-50%) translateY(10px);
     border-width: 6px;
     border-style: solid;
-    border-color: transparent transparent #007bff transparent;
     opacity: 0;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Mostrar tooltip ao hover */
-#topo:hover::after,
-#topo:hover::before {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        background: var(--azul-principal);
-        width: 100%;
-        left: -100%;
-        transition: left 0.3s;
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 20px;
-    }
-}
-
-
-/* Tooltip base */
-.whatsapp[data-tooltip]::after,
-#topo[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 110%;
-    right: 50%;
-    transform: translateX(50%) translateY(10px);
-    /* começa um pouco abaixo */
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 13px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    /* animação */
-}
-
-/* Setinha do tooltip */
-.whatsapp[data-tooltip]::before,
-#topo[data-tooltip]::before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    right: 50%;
-    transform: translateX(50%) translateY(10px);
-    /* começa um pouco abaixo */
-    border-width: 6px;
-    border-style: solid;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* --- Tooltip WhatsApp (verde) --- */
+/* Tooltip cores */
 .whatsapp[data-tooltip]::after {
     background: #25d366;
+    color: #fff;
 }
 
 .whatsapp[data-tooltip]::before {
     border-color: transparent transparent #25d366 transparent;
 }
 
-/* --- Tooltip Topo (azul) --- */
 #topo[data-tooltip]::after {
     background: #007bff;
+    color: #fff;
 }
 
 #topo[data-tooltip]::before {
     border-color: transparent transparent #007bff transparent;
 }
 
-/* Mostrar ao hover com fade + slide */
-.whatsapp:hover::after,
-.whatsapp:hover::before,
-#topo:hover::after,
-#topo:hover::before {
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
     opacity: 1;
-    transform: translateX(50%) translateY(0);
-    /* sobe suavemente */
+    transform: translateX(-50%) translateY(0);
 }
 
+/* Iframe filiais */
+#iframeFilial {
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+}

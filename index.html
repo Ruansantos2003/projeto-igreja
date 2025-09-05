@@ -10,12 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon -->
     <link rel="icon" href="img/img5-removebg-preview.png" type="image/png">
 </head>
 
-<body>
+<body id="topo-pagina">
 
     <!-- Cabeçalho -->
     <header>
@@ -32,16 +30,16 @@
                 <ul class="nav-links">
                     <li><a href="#topo-pagina">Início</a></li>
                     <li><a href="#cultos">Cultos</a></li>
-                    <li><a href="#sobre">Sobre a Igreja</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#ofertas">Ofertas</a></li>
 
-                    <!-- Dropdown Filiais funcional com sites de teste -->
+                    <!-- Dropdown Filiais -->
                     <li class="dropdown">
-                        <a href="#">Filiais <i class="fas fa-chevron-down"></i></a>
+                        <a href="javascript:void(0)">Filiais <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://127.0.0.1:5501/index.html" target="iframe-content">Vila Natal</a>
-                            </li>
-                            <li><a href="https://www.google.com" target="iframe-content">Almeida Prado</a></li>
+                            <li><a href="https://ruansantos2003.github.io/site-igreja2/" class="filial-link">Vila
+                                    Natal</a></li>
+
                         </ul>
                     </li>
 
@@ -61,21 +59,48 @@
 
     <main>
 
+        <!-- Carrossel de fotos -->
+        <section class="carrossel">
+            <div class="slides">
+                <div class="slide active" style="background: linear-gradient(135deg, #6a11cb, #2575fc);">
+                    <h2>Bem-vindo ao Ministério</h2>
+                    <p>Transformando vidas através da fé e da esperança</p>
+                </div>
+                <div class="slide" style="background: linear-gradient(135deg, #f7971e, #ffd200);">
+                    <h2>Cultos Inspiradores</h2>
+                    <p>Venha participar de momentos de oração e adoração</p>
+                </div>
+                <div class="slide" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">
+                    <h2>Comunidade Unida</h2>
+                    <p>Construindo vínculos fortes e solidários</p>
+                </div>
+            </div>
+            <div class="carrossel-buttons">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+
+            <div class="indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <!-- Sobre Nós -->
         <section id="sobre" class="section fade-in sobre-nos">
             <div class="sobre-container">
                 <div class="sobre-text">
                     <h2><i class="fas fa-church"></i> Sobre Nós</h2>
                     <p>Somos o <strong>Ministério Apostólico Um Novo Tempo</strong>, dedicado a levar a mensagem de fé,
-                        esperança e amor.
-                        Nosso propósito é acolher e transformar vidas através da Palavra de Deus, construindo uma
-                        comunidade unida e solidária.</p>
+                        esperança e amor. Nosso propósito é acolher e transformar vidas através da Palavra de Deus,
+                        construindo uma comunidade unida e solidária.</p>
                 </div>
-                <div class="sobre-imagem">
-                    <img src="img/igreja.jpg" alt="Igreja e comunidade">
-                </div>
+                <div class="sobre-imagem"></div>
             </div>
         </section>
 
+        <!-- Nossas Unidades -->
         <section id="unidades" class="section fade-in unidades-section">
             <h2><i class="fas fa-map-marker-alt"></i> Nossas Unidades</h2>
             <div class="cards">
@@ -92,17 +117,14 @@
             </div>
         </section>
 
+        <!-- Nossos Cultos -->
         <section id="cultos" class="section fade-in cultos-section">
-            <h2><i class="fas fa-calendar-alt"></i> Cultos</h2>
-            <div class="cards">
-                <div class="card">
-                    <i class="fas fa-music card-icon"></i>
-                    <h3>Culto de Busca do Espírito Santo</h3>
-                    <p>Quarta-feira - 19h</p>
-                </div>
-            </div>
+            <h2><i class="fas fa-calendar-alt"></i> Nossos Cultos</h2>
+            <p class="cultos-desc">Participe dos momentos de fé e adoração. Cada culto é uma oportunidade para
+                fortalecer sua vida espiritual.</p>
         </section>
 
+        <!-- Contato -->
         <section id="contato" class="section fade-in contato-section">
             <h2><i class="fas fa-envelope"></i> Contato</h2>
             <div class="contact-cards">
@@ -114,28 +136,30 @@
             </div>
         </section>
 
-        <!-- Iframe funcional para filiais -->
-        <section id="filiais-iframe" style="margin: 40px 0;">
-            <iframe name="iframe-content" src="" frameborder="0"
-                style="width:100%; height:600px; border-radius:15px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border:none;">
-            </iframe>
-        </section>
-
-        <section id="filiais-iframe" style="margin: 40px 0;">
-            <iframe name="iframe-content"
-                src="file:///C:/Users/Don/OneDrive/Desktop/Ministerio%20Ap%20Um%20Novo%20Tempo/index.html"
-                frameborder="0"
-                style="width:100%; height:600px; border-radius:15px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border:none;">
-            </iframe>
-        </section>
-
     </main>
 
     <footer>
         <p>&copy; 2025 Ministério Apostólico Um Novo Tempo - Todos os direitos reservados</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Botão WhatsApp -->
+    <a href="https://wa.me/5511999999999" target="_blank" id="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Script para substituir todo o site pelo site da filial -->
+    <script>
+        const linksFiliais = document.querySelectorAll('.filial-link');
+
+        linksFiliais.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                // Substitui todo o body pelo iframe do site da filial
+                document.body.innerHTML = `<iframe src="${link.href}" style="width:100%; height:100vh; border:none;"></iframe>`;
+            });
+        });
+    </script>
+
 </body>
 
 </html>
