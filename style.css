@@ -70,7 +70,7 @@ header {
 }
 
 .nav-links li a:hover {
-    color: #ffd200;
+    color: #000000;
 }
 
 /* Dropdown */
@@ -107,7 +107,7 @@ header {
 }
 
 .social-icons a:hover {
-    color: #ffd200;
+    color: #000000;
 }
 
 /* Menu mobile */
@@ -264,322 +264,184 @@ header {
     }
 }
 
-/* Seção Unidades */
-
-.unidades-section {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #1d11cb, #2575fc);
-    padding: 140px 20px;
+/* ===== Nossas Unidades Branco e Azul ===== */
+.unidades-hiper {
+    background: #f9faff;
+    padding: 80px 20px;
     text-align: center;
-    color: #fff;
-    position: relative;
 }
 
-.container-unidades {
+.unidades-container-hiper h2 {
+    font-size: 2.8rem;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.intro-unidades {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.unidades-cards-hiper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.unidades-title {
-    font-size: 3rem;
-    font-weight: 900;
-    margin-bottom: 20px;
-}
-
-.unidades-intro {
-    font-size: 1.2rem;
-    max-width: 900px;
-    margin: 0 auto 80px auto;
-    line-height: 1.6;
-}
-
-/* Cards */
-.unidades-cards {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
 .unidade-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 50px 30px;
-    width: 360px;
-    color: #fff;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
-    transition: transform 0.6s, box-shadow 0.6s, background 0.6s;
+    background: white;
+    border-radius: 20px;
+    padding: 35px 25px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-}
-
-.unidade-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.unidade-icon-wrapper {
-    background: rgba(255, 255, 255, 0.2);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    transition: all 0.4s ease;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 0 auto 30px auto;
-    transition: transform 0.5s, box-shadow 0.5s;
+    justify-content: center;
 }
 
-.unidade-card:hover .unidade-icon-wrapper {
-    transform: scale(1.3);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
-}
-
-.unidade-icon {
-    font-size: 3.5rem;
-    color: #fff;
+.unidade-card i {
+    font-size: 3rem;
+    color: #0066cc;
+    margin-bottom: 15px;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .unidade-card h3 {
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 1.5rem;
+    color: #004a99;
     margin-bottom: 10px;
 }
 
-.unidade-endereco {
+.unidade-card p {
     font-size: 1rem;
-    font-style: italic;
-    opacity: 0.9;
-    margin-bottom: 15px;
-}
-
-/* Modais */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.7);
-    animation: fadeIn 0.5s;
-}
-
-.modal-content {
-    background: #fff;
     color: #333;
-    margin: 10% auto;
-    padding: 30px;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
-    animation: scaleUp 0.5s;
 }
 
-.modal-content h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+.unidade-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.modal-content p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-}
-
-/* Animações */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes scaleUp {
-    from {
-        transform: scale(0.7);
-    }
-
-    to {
-        transform: scale(1);
-    }
+.unidade-card:hover i {
+    transform: scale(1.3);
+    color: #005fcc;
 }
 
 /* Responsivo */
-@media (max-width:950px) {
-    .unidades-cards {
+@media (max-width: 768px) {
+    .unidades-cards-hiper {
         flex-direction: column;
-        gap: 40px;
-    }
-
-    .unidades-title {
-        font-size: 2.5rem;
+        gap: 20px;
     }
 }
 
-@media (max-width:500px) {
-    .unidades-title {
-        font-size: 2rem;
-    }
-
-    .unidade-card {
-        width: 100%;
-        padding: 40px 20px;
-    }
-
-    .modal-content {
-        width: 90%;
-    }
-}
-
-/* ================= Sobre Nós Hiper Top ================= */
+/* ===== Sobre Nós Branco e Azul ===== */
 .sobre-nos-hiper {
     position: relative;
-    padding: 140px 20px;
-    background: linear-gradient(135deg, #1124cb, #2575fc);
-    color: #ffffff;
+    padding: 100px 20px;
+    background: #ffffff;
+    /* Fundo branco */
+    color: #0a2e6f;
+    /* Azul escuro para textos */
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     overflow: hidden;
 }
 
 .sobre-container-hiper {
-    position: relative;
     max-width: 1100px;
     margin: 0 auto;
     z-index: 10;
+    position: relative;
 }
 
 .sobre-container-hiper h2 {
     font-size: 3rem;
     font-weight: 800;
-    background: linear-gradient(90deg, #ffffff, #fafafa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+    color: #0a2e6f;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.sobre-container-hiper h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #2575fc;
+    /* Azul vibrante */
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
 }
 
 .sobre-container-hiper .intro {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.8;
-    margin-bottom: 60px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 60px auto;
+    color: #0a2e6f;
 }
 
+/* Cards */
 .sobre-blocos-hiper {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .bloco-hiper {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 45px 25px;
-    border-radius: 25px;
-    flex: 1 1 300px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    transition: transform 0.7s, box-shadow 0.7s, background 0.7s;
-    backdrop-filter: blur(8px);
+    background: #2575fc;
+    /* Azul vibrante */
+    color: #ffffff;
+    padding: 40px 25px;
+    border-radius: 20px;
+    flex: 1 1 280px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .bloco-hiper:hover {
-    transform: translateY(-25px) scale(1.05);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 .bloco-icon-hiper {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
     color: #ffffff;
-    margin-bottom: 20px;
-    transition: transform 0.7s, color 0.7s;
+    transition: transform 0.5s ease, color 0.5s ease;
 }
 
 .bloco-hiper:hover .bloco-icon-hiper {
-    transform: rotate(25deg) scale(1.25);
-    color: #3200e6;
+    transform: scale(1.2) rotate(15deg);
+    color: #ffd200;
+    /* Amarelo para contraste */
 }
 
 .bloco-hiper h3 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
 .bloco-hiper p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
+    text-align: center;
 }
 
-/* ================= Fundo animado com ondas ================= */
-.fundo-hiper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.onda {
-    position: absolute;
-    bottom: 0;
-    width: 200%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 43%;
-    animation: ondaAnim 15s infinite linear;
-}
-
-.onda1 {
-    animation-delay: 0s;
-}
-
-.onda2 {
-    animation-delay: 5s;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.onda3 {
-    animation-delay: 10s;
-    background: rgba(255, 255, 255, 0.12);
-}
-
-@keyframes ondaAnim {
-    0% {
-        transform: translateX(0) translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateX(-25%) translateY(10px) rotate(3deg);
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(0) rotate(0deg);
-    }
-}
-
-/* ================= Animação de entrada ================= */
+/* Animação de entrada */
 .sobre-blocos-hiper .bloco-hiper {
     opacity: 0;
     transform: translateY(50px);
@@ -605,8 +467,8 @@ header {
     }
 }
 
-/* ================= Responsividade ================= */
-@media (max-width: 768px) {
+/* Responsivo */
+@media (max-width:768px) {
     .sobre-container-hiper h2 {
         font-size: 2.4rem;
     }
@@ -621,287 +483,212 @@ header {
     }
 
     .bloco-hiper p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 }
 
 /* sobre nós*/
 
-/* Sessão Nossos Cultos */
-.cultos-section {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #144fcfb4, #144fcfb4);
-    color: #fff;
-    padding: 140px 20px;
+/* ===== Nossos Cultos Branco e Azul ===== */
+.cultos-hiper {
+    background: #f9faff;
+    padding: 80px 20px;
     text-align: center;
 }
 
-.container-cultos {
+.cultos-container-hiper h2 {
+    font-size: 2.8rem;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.intro-cultos {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.cultos-cards-hiper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.cultos-title {
-    font-size: 3rem;
-    font-weight: 900;
-    margin-bottom: 20px;
-}
-
-.cultos-intro {
-    font-size: 1.2rem;
-    max-width: 900px;
-    margin: 0 auto 80px auto;
-    line-height: 1.6;
-}
-
-/* Container dos cards */
-.cultos-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 40px;
-}
-
-/* Cada card */
 .culto-card {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    padding: 35px 30px;
-    border-radius: 25px;
+    background: white;
+    border-radius: 20px;
+    padding: 35px 25px;
     width: 280px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    transition: all 0.6s ease;
-    opacity: 0;
-    transform: translateY(60px);
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Ícone animado */
-.culto-card .icon {
-    font-size: 50px;
-    margin-bottom: 20px;
-    animation: floatIcon 2s ease-in-out infinite alternate;
-}
-
-/* Efeito hover avançado */
-.culto-card:hover {
-    transform: translateY(-15px) rotate(-1deg) scale(1.08);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    filter: brightness(1.2);
-}
-
-/* Animação ícone flutuante */
-@keyframes floatIcon {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Animação de entrada */
-.culto-card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Cabeçalho do card */
-.culto-header {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
 }
 
-.culto-header i {
+.culto-card i {
     font-size: 3rem;
-    color: #fff;
-    transition: transform 0.5s;
+    color: #0066cc;
+    margin-bottom: 15px;
+    transition: transform 0.3s, color 0.3s;
 }
 
-.culto-card:hover .culto-header i {
-    transform: scale(1.3);
+.culto-card h3 {
+    font-size: 1.5rem;
+    color: #004a99;
+    margin-bottom: 10px;
 }
 
-.culto-header h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin: 0;
-}
-
-/* Texto do card */
 .culto-card p {
     font-size: 1rem;
-    margin-bottom: 10px;
-    line-height: 1.5;
+    color: #333;
+}
+
+.culto-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.culto-card:hover i {
+    transform: scale(1.3);
+    color: #005fcc;
 }
 
 /* Responsivo */
-@media (max-width:950px) {
-    .cultos-cards {
+@media (max-width: 768px) {
+    .cultos-cards-hiper {
         flex-direction: column;
-        gap: 40px;
-    }
-
-    .cultos-title {
-        font-size: 2.5rem;
+        gap: 20px;
     }
 }
 
-@media (max-width:500px) {
-    .cultos-title {
-        font-size: 2rem;
-    }
+/* cultos final*/
 
-    .culto-card {
-        width: 100%;
-        padding: 30px 20px;
-    }
-}
-
-
-.contato-section {
+/* ================= Contato Moderno ================= */
+.contato-hiper {
+    background: #f9faff;
     padding: 80px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 20px;
-    margin-top: 60px;
 }
 
-.contato-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+.contato-container-hiper h2 {
+    font-size: 2.8rem;
+    color: #0066cc;
+    margin-bottom: 10px;
 }
 
-.contato-section h2 i {
-    color: #ffd200;
-    margin-right: 12px;
-}
-
-.contato-desc {
+.intro-contato {
     font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 50px auto;
-    line-height: 1.6;
-    opacity: 0.9;
+    color: #333;
+    margin-bottom: 50px;
 }
 
-.contato-container {
+.contato-cards-hiper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
-}
-
-/* Cards do contato */
-.contato-cards {
-    display: flex;
-    flex-direction: column;
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
 }
 
 .contato-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    padding: 25px 20px;
-    border-radius: 25px;
+    background: white;
+    border-radius: 20px;
+    padding: 35px 25px;
     width: 280px;
-    color: white;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
 }
 
-.contato-card .icon {
-    font-size: 45px;
-    margin-bottom: 20px;
-    animation: floatIcon 2s ease-in-out infinite alternate;
+.contato-card i {
+    font-size: 3rem;
+    color: #0066cc;
+    margin-bottom: 15px;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .contato-card h3 {
     font-size: 1.5rem;
+    color: #004a99;
     margin-bottom: 10px;
 }
 
 .contato-card p {
     font-size: 1rem;
-    line-height: 1.4;
+    color: #333;
 }
 
 .contato-card:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
-    filter: brightness(1.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Formulário */
-.contato-form {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
+.contato-card:hover i {
+    transform: scale(1.3);
+    color: #005fcc;
+}
+
+.contato-form-hiper {
+    background: white;
+    border-radius: 20px;
     padding: 40px 30px;
-    border-radius: 25px;
-    width: 350px;
+    max-width: 500px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: white;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
-.contato-form h3 {
+.contato-form-hiper h3 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #ffffff;
+    color: #0066cc;
+    margin-bottom: 15px;
 }
 
-.contato-form input,
-.contato-form textarea {
+.contato-form-hiper input,
+.contato-form-hiper textarea {
     padding: 12px 15px;
-    border: none;
+    border: 2px solid #cce0ff;
     border-radius: 15px;
     font-size: 1rem;
     outline: none;
     width: 100%;
-    resize: none;
-   
-    color: white;
     transition: all 0.3s ease;
+    color: #333;
 }
 
-.contato-form input:focus,
-.contato-form textarea:focus {
-    
-    box-shadow: 0 0 15px #ffffff;
+.contato-form-hiper input:focus,
+.contato-form-hiper textarea:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
 }
 
-.contato-form button {
+.contato-form-hiper button {
     padding: 15px;
     border: none;
     border-radius: 20px;
     font-size: 1.1rem;
     font-weight: bold;
-    background: #ffffff;
-    color: #319bd8;
+    background: #0066cc;
+    color: white;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.contato-form button i {
-    margin-left: 8px;
+.contato-form-hiper button:hover {
+    background: #005fcc;
+    transform: translateY(-3px);
 }
-
-.contato-form button:hover {
-    background: #ffffff;
-    transform: translateY(-5px);
-}
+/* final contato*/
 
 /* Animação de ícones flutuantes */
 @keyframes floatIcon {
@@ -1047,4 +834,27 @@ footer {
     100% {
         transform: scale(1);
     }
+}
+
+/* Botão Voltar Filial */
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-voltar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
